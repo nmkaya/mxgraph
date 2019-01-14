@@ -36,12 +36,14 @@
 	// Handles form-submit by preparing to process response
 	function handleSubmit()
 	{
+		
 		var form = window.openForm || document.getElementById('openForm');
 		
 		// Checks for support of the File API for local file access
 		// except for files where the parse is on the server
 		if (window.parent.Graph.fileSupport && form.upfile.files.length > 0)
 		{
+			
 			handleFiles(form.upfile.files);
 			
 			return false;
@@ -94,6 +96,7 @@
 
 	function main()
 	{
+		
 		if (window.parent.Editor.useLocalStorage)
 		{
 			document.body.innerHTML = '';
@@ -156,6 +159,7 @@
 						{
 							try
 							{
+								
 								window.parent.open(window.parent.location.href);
 								window.parent.openFile.setData(localStorage.getItem(k), k);
 							}

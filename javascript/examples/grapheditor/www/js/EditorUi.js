@@ -2206,13 +2206,16 @@ EditorUi.prototype.open = function()
 	// were opened from another domain then this will fail.
 	try
 	{
+		
 		if (window.opener != null && window.opener.openFile != null)
 		{
 			window.opener.openFile.setConsumer(mxUtils.bind(this, function(xml, filename)
 			{
 				try
 				{
+					
 					var doc = mxUtils.parseXml(xml); 
+					
 					this.editor.setGraphXml(doc.documentElement);
 					this.editor.setModified(false);
 					this.editor.undoManager.clear();
